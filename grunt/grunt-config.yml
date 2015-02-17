@@ -6,20 +6,20 @@ general:
   LocalExtensionPath:   "d:\\Documents\\Qlik\\Sense\\Extensions"
 
   # Name of the Extension as defined in the generator
-  ExtensionName:        "Calendar View"
+  ExtensionName:        "Calendar Heatmap"
 
   # Name of the Extension, safe to be used for file-names
-  ExtensionNameSafe:    "CalendarView"
+  ExtensionNameSafe:    "CalendarHeatmap"
 
   # Namespace
   ExtensionNamespace:   "swr-"
 
   # Description of the Extension as defined in the generator
-  ExtensionDescription: "Calendar View with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years."
+  ExtensionDescription: "Calendar Heatmap with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years."
 
   # Version of the extension, will be re-used in several areas,
   # e.g the generated .zip-file in the 'release' Grunt-task
-  Version:              "0.0.1"
+  Version:              "0.1.0"
 
 # -------------------------------------------------------------------
 # Settings for the 'dev' Grunt task
