@@ -1,7 +1,9 @@
 # Calendar Heatmap
 Calendar Heatmap with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years.
 
-## Screenshots
+## Screenshot
+
+![](https://github.com/stefanwalther/qsCalendarHeatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sensen.png)
 
 ## Installation
 
