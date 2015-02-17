@@ -3,7 +3,7 @@ Calendar Heatmap with a diverging color scale. The values are displayed as color
 
 ## Screenshot
 
-![](https://github.com/stefanwalther/qsCalendarHeatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sensen.png)
+![](https://github.com/stefanwalther/qsCalendarHeatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sense.png)
 
 ## Installation
 
