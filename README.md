@@ -1,13 +1,11 @@
 # Calendar Heatmap
 Calendar Heatmap with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years.
 
-## Purpose and Description
-
 ## Screenshots
 
 ## Installation
 
-1. Download the latest version
+1. Download the [latest version](https://github.com/stefanwalther/qsCalendarHeatmap/raw/master/build/CalendarHeatmap_latest.zip)
 2. Qlik Sense Desktop
 	* To install, copy all files in the .zip file to folder "C:\Users\%USERNAME%\Documents\Qlik\Sense\Extensions\swr-CalendarHeatmap"
 3. Qlik Sense Server
@@ -55,15 +53,16 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 ## Author
 
 **Stefan Walther**
-* http://www.yourwebsite.com
-* http://github.com/yourname
+* [qlikblog.at](http://www.qlikblog.at)
+* [twitter/waltherstefan](http://twitter.com/waltherstefan)
+* [github.com/stefanwalther](http://github.com/stefanwalther)
 
 
 ## Change Log
 
-See [CHANGELOG.md](CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/stefanwalther/qsCalendarHeatmap/blob/master/CHANGELOG.md)
 
 ## License & Copyright
 The software is made available "AS IS" without any warranty of any kind under the MIT License (MIT).
 
-See [Additional license information for this solution.](LICENSE.md)
+See [Additional license information for this solution.](https://github.com/stefanwalther/qsCalendarHeatmap/blob/master/LICENSE.md)
