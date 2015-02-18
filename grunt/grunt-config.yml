@@ -52,3 +52,13 @@ release:
     beautify: false
     preserveCommments: false
     compress: true
+
+# -------------------------------------------------------------------
+# Grunt task specific default settings
+# -------------------------------------------------------------------
+jsSources:
+  - "../src/**/*.js"
+  - "!../src/**/*.min.js"
+
+
+

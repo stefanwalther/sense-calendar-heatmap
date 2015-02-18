@@ -2,7 +2,7 @@
 define( [
 	'jquery',
 	'underscore'
-], function ( $, _ ) {
+], function ( $ /*, _*/ ) {
 	'use strict';
 
 	return {

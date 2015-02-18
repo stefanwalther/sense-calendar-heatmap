@@ -1,10 +1,11 @@
 /*global define*/
 define( [
+	'jquery',
 	'qvangular',
 	'text!./swr-simpletable.ng.html',
 	'text!./swr-simpletable.css'
 
-], function ( qvangular, ngTemplate, cssContent ) {
+], function ( $, qvangular, ngTemplate, cssContent ) {
 	'use strict';
 
 	$( "<style>" ).html( cssContent ).appendTo( "head" );
@@ -17,12 +18,12 @@ define( [
 				hyperCube: '='
 			},
 			template: ngTemplate,
-			link: function ( $scope ) {
+			link: function ( /*$scope*/ ) {
 
-				console.log( 'swr-simpletable:data', $scope.hyperCube );
+				//console.log( 'swr-simpletable:data', $scope.hyperCube );
 
 			}
-		}
+		};
 
 	}] );
 

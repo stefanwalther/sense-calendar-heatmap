@@ -1,4 +1,4 @@
-/*global define*/
+/*global define, d3*/
 define( [
 	'jquery',
 	'underscore',
@@ -24,24 +24,24 @@ define( [
 		 * @param data
 		 * @returns {Number}
 		 */
-		function getMinYear ( data ) {
-			var s = d3.values( data )
-				.sort( function ( a, b ) { return d3.ascending( a.Date, b.Date ); } )
-				[0];
-			return (s) ? parseInt( s.Date.substr( 0, 4 ) ) : -1;
-		}
+		//function getMinYear ( data ) {
+		//	var s = d3.values( data )
+		//		.sort( function ( a, b ) { return d3.ascending( a.Date, b.Date ); } )
+		//		[0];
+		//	return (s) ? parseInt( s.Date.substr( 0, 4 ) ) : -1;
+		//}
 
 		/**
 		 * Returns the maximum year value.
 		 * @param data
 		 * @returns {Number}
 		 */
-		function getMaxYear ( data ) {
-			var s = d3.values( data )
-				.sort( function ( a, b ) { return d3.descending( a.Date, b.Date ); } )
-				[0];
-			return (s) ? parseInt( s.Date.substr( 0, 4 ) ) : -1;
-		}
+		//function getMaxYear ( data ) {
+		//	var s = d3.values( data )
+		//		.sort( function ( a, b ) { return d3.descending( a.Date, b.Date ); } )
+		//		[0];
+		//	return (s) ? parseInt( s.Date.substr( 0, 4 ) ) : -1;
+		//}
 
 		/**
 		 * Return the absolute minimum value.
@@ -75,7 +75,7 @@ define( [
 		function getYearsRange ( data ) {
 			var years = [];
 			d3.nest()
-				.key( function ( d ) { return d.Date.substr( 0, 4 ) } )
+				.key( function ( d ) { return d.Date.substr( 0, 4 ); } )
 				.sortKeys( d3.ascending )
 				.entries( data )
 				.forEach( function ( v ) {
@@ -97,14 +97,17 @@ define( [
 
 			$( '#chart_' + objectId ).empty();
 
-			var minYear = getMinYear( cvData );
-			var maxYear = getMaxYear( cvData );
+			// Not used anymore because we fetch the getYearsRange ...
+			//var minYear = getMinYear( cvData );
+			//var maxYear = getMaxYear( cvData );
 
+			/*jshint -W016, -W052*/
 			var w = width - 25,
 				pw = 14,
 				z = ~~((w - pw * 2) / 53),
 				ph = z >> 1,
 				h = z * 7;
+			/*jshint +W016, +W052*/
 
 			var yearsRange = getYearsRange( cvData );
 
@@ -140,6 +143,8 @@ define( [
 				.enter().append( "svg:path" )
 				.attr( "class", "D3CV_month" )
 				.attr( "d", function ( d ) {
+
+					/*jshint -W014*/
 					return "M" + (d.firstWeek + 1) * z + "," + d.firstDay * z
 						+ "H" + d.firstWeek * z
 						+ "V" + 7 * z
@@ -149,6 +154,7 @@ define( [
 						+ "V" + 0
 						+ "H" + (d.firstWeek + 1) * z
 						+ "Z";
+					/*jshint +W014*/
 				} );
 
 			var data = d3.nest()
@@ -170,9 +176,10 @@ define( [
 				.attr( 'class', 'D3CV_ToolTip' )
 				.style( 'opacity', 0 );
 
-			var divAction = d3.select( '#chart_' + objectId ).append( 'div' )
-				.attr( 'class', 'D3CV_ToolTip' )
-				.style( 'opacity', 0 );
+			// disabled as of now
+			//var divAction = d3.select( '#chart_' + objectId ).append( 'div' )
+			//	.attr( 'class', 'D3CV_ToolTip' )
+			//	.style( 'opacity', 0 );
 
 			var color = d3.scale.quantize()
 					//.domain([-.05, .05])
@@ -201,7 +208,7 @@ define( [
 					}
 
 				} )
-				.on( 'click', function ( d ) {
+				.on( 'click', function ( /*d*/ ) {
 					//console.log('Select Texts in Column' + d.Date);
 					//_t.Data.SelectTextsInColumn( 0, true, d.Date );
 
@@ -225,13 +232,13 @@ define( [
 					//console.log(data[d.Date]);
 					divTooltip.transition()
 						.duration( 200 )
-						.style( 'opacity', .99 )
+						.style( 'opacity', 0.99 )
 						.style( 'display', 'block' );
 					divTooltip.html( 'Date: ' + d.Date + '<br/>' + (!_.isEmpty( data[d.Date] ) ? data[d.Date].ToolTip : '') )
 						.style( 'left', (d3.event.pageX) - leftOffset + 'px' )
 						.style( 'top', ((d3.event.pageY) - divTooltip.attr( 'height' ) - topOffset + 5) + 'px' );
 				} )
-				.on( 'mouseout', function ( d ) {
+				.on( 'mouseout', function ( /* d */ ) {
 					divTooltip.transition()
 						.duration( 200 )
 						.style( 'opacity', 0 )
@@ -253,9 +260,9 @@ define( [
 				cvData: '='
 			},
 			template: ngTemplate,
-			link: function ( $scope, $element, $attrs ) {
+			link: function ( $scope, $element /*, $attrs*/ ) {
 
-				$scope.$watchCollection( 'cvData', function ( newVal ) {
+				$scope.$watchCollection( 'cvData', function ( /*newVal, oldVal*/ ) {
 					//console.log( 'swr-calendarview:newVal', newVal );
 					$scope.render();
 				} );
@@ -276,12 +283,12 @@ define( [
 					//console.info( 'render Chart', $scope.objectId );
 					//console.log( '-- data', $scope.cvData );
 
-					renderChart( $scope.objectId, $scope.cvData, $element[0].offsetWidth )
+					renderChart( $scope.objectId, $scope.cvData, $element[0].offsetWidth );
 
-				}
+				};
 
 			}
-		}
+		};
 
 	}] );
 

@@ -1,4 +1,4 @@
-/*global define*/
+/*global define, d3*/
 define( [
 	'./../external/d3/d3.min'
 ], function () {

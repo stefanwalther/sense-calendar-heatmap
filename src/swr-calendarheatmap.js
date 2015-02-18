@@ -1,9 +1,6 @@
 /*global
  define,
- require,
- window,
- console,
- _
+ console
  */
 /*jslint    devel:true,
  white: true
@@ -53,8 +50,8 @@ define( [
 			controller: ['$scope', function ( $scope ) {
 
 				var app = qlik.currApp();
-				$scope.hyperCube;
-				$scope.data;
+				$scope.hyperCube = null;
+				$scope.data = null;
 
 				function createHyperCube () {
 
@@ -73,9 +70,7 @@ define( [
 
 					//console.log( 'uniqueDayTooltip', $scope.layout.props.uniqueDayTooltip );
 
-					if ( $scope.layout.props
-						&& !_.isEmpty( $scope.layout.props.uniqueDay )
-						&& !_.isEmpty( $scope.layout.props.uniqueDayValue )
+					if ( $scope.layout.props && !_.isEmpty( $scope.layout.props.uniqueDay ) && !_.isEmpty( $scope.layout.props.uniqueDayValue )
 					) {
 
 						var cubeDef = {
@@ -121,7 +116,7 @@ define( [
 					}
 				}
 
-				$scope.$watchCollection( 'layout.props', function ( newVal ) {
+				$scope.$watchCollection( 'layout.props', function ( /*newVal*/ ) {
 					//console.info( 'properties changed, create cube' );
 					createHyperCube();
 				} );
