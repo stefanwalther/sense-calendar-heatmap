@@ -13,6 +13,8 @@ Calendar Heatmap with a diverging color scale. The values are displayed as color
 3. Qlik Sense Server
 	* See instructions [how to import an extension on Qlik Sense Server](http://help.qlik.com/sense/en-US/online/#../Subsystems/Qlik_Management_Console_help/Content/QMC_Resources_Extensions_AddingExtensions.htm?Highlight=extension)
 
+There is also a [demo available](https://github.com/stefanwalther/qsCalendarHeatmap/raw/master/demo/Extension%20-%20Calendar%20View.qvf), if you want to see a working example.
+
 ## Configuration
 
 After installing the extension the following properties can be set:
