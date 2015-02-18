@@ -38,7 +38,7 @@ The Debug Mode can only be activated and you'll only see the resulting table in 
 ## Ideas for Improvement
 I'd like to look into the following areas to improve this Visualization Extension for Qlik Sense:
 
-- [ ] Skip rendering of years not included in the data
+- [x] Skip rendering of years not included in the data
 - [ ] Performance improvements
 - [ ] Better, configurable label
 - [ ] Offer also a week view and maybe other views
