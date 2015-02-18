@@ -68,13 +68,30 @@ define( [
 		}
 
 		/**
+		 * Returns a range of the years to display
+		 * @param data
+		 * @returns {Array}
+		 */
+		function getYearsRange ( data ) {
+			var years = [];
+			d3.nest()
+				.key( function ( d ) { return d.Date.substr( 0, 4 ) } )
+				.sortKeys( d3.ascending )
+				.entries( data )
+				.forEach( function ( v ) {
+					years.push( parseInt( v.key ) );
+				} );
+			return years;
+		}
+
+		/**
 		 * Render the D3 Calendar View
 		 * @param objectId {string}
 		 * @param cvData {object}
 		 */
 		function renderChart ( objectId, cvData, width ) {
 
-			if ( !cvData ) {
+			if ( !cvData || cvData.length === 0 ) {
 				return;
 			}
 
@@ -89,11 +106,14 @@ define( [
 				ph = z >> 1,
 				h = z * 7;
 
+			var yearsRange = getYearsRange( cvData );
+
 			var vis = d3.select( '#chart_' + objectId )
 				.selectAll( "svg" )
 				//.data( [1990, 1994] )
 				//Todo: exclude empty years by default or add at least an option for doing so
-				.data( d3.range( minYear, (maxYear + 1) ) )
+				//.data( d3.range( minYear, (maxYear + 1) ) )
+				.data( yearsRange )
 				.enter().append( "svg:svg" )
 				.attr( "width", w )
 				.attr( "height", h + ph * 2 )
