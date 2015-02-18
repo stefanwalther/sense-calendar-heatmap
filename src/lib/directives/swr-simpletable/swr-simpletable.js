@@ -2,12 +2,11 @@
 define( [
 	'qvangular',
 	'text!./swr-simpletable.ng.html',
-	'text!./swr-simpletable.css'
 
-], function ( qvangular, ngTemplate, cssContent ) {
+	'css!./swr-simpletable.css'
+
+], function ( qvangular, ngTemplate ) {
 	'use strict';
-
-	$( "<style>" ).html( cssContent ).appendTo( "head" );
 
 	qvangular.directive( 'swrSimpleTable', [function () {
 

@@ -1,19 +1,8 @@
 /*global define*/
-define( [
-	'jquery',
-	'underscore'
-], function ( $, _ ) {
+define(function ( ) {
 	'use strict';
 
 	return {
-
-		/**
-		 * Add a style to the document's header.
-		 * @param cssContent (String)
-		 */
-		addStyleToHeader: function ( cssContent ) {
-			$( "<style>" ).html( cssContent ).appendTo( "head" );
-		},
 
 		// Copied from senseUtils - https://github.com/skokenes/senseUtils/blob/master/README.md
 		destroyObj: function ( app, qId ) {
