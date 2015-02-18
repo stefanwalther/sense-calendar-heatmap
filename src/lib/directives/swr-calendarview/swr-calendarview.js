@@ -4,20 +4,18 @@ define( [
 	'underscore',
 	'qvangular',
 	'text!./swr-calendarview.ng.html',
-	'text!./swr-calendarview.css',
-	'text!./colorbrewer.css',
 	'./../../js/calendar',
+
+	'css!./swr-calendarview.css',
+	'css!./colorbrewer.css',
 
 	// no return value
 	'./../../external/d3/d3.min'
 
-], function ( $, _, qvangular, ngTemplate, cssContent, cssColorBrewer, calendar ) {
+], function ( $, _, qvangular, ngTemplate, calendar ) {
 	'use strict';
 
 	qvangular.directive( 'swrCalendarview', [function () {
-
-		$( "<style>" ).html( cssContent ).appendTo( "head" );
-		$( "<style>" ).html( cssColorBrewer ).appendTo( "head" );
 
 		/**
 		 * Returns the minimum year value.

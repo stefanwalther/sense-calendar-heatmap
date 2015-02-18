@@ -16,16 +16,16 @@ define( [
 		'./initialproperties',
 		'./lib/js/extensionUtils',
 
-		'text!./lib/css/style.css',
 		'text!./swr-calendarheatmap.ng.html',
+
+		'css!./lib/css/style.css',
 
 		// no return value
 		'./lib/directives/swr-simpletable/swr-simpletable',
 		'./lib/directives/swr-calendarview/swr-calendarview'
 	],
-	function ( $, _, qlik, props, initProps, extensionUtils, cssContent, ngTemplate ) {
+	function ( $, _, qlik, props, initProps, extensionUtils, ngTemplate ) {
 		'use strict';
-		extensionUtils.addStyleToHeader( cssContent );
 
 		function transformData ( hc ) {
 			var data = [];
