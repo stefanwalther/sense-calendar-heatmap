@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/stefanwalther/qsCalendarHeatmap.svg?branch=master)](https://travis-ci.org/stefanwalther/qsCalendarHeatmap)
+
 # Calendar Heatmap
 Qlik Sense Visualization Extension with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years.
 
@@ -13,7 +15,7 @@ Qlik Sense Visualization Extension with a diverging color scale. The values are 
 3. Qlik Sense Server
 	* See instructions [how to import an extension on Qlik Sense Server](http://help.qlik.com/sense/en-US/online/#../Subsystems/Qlik_Management_Console_help/Content/QMC_Resources_Extensions_AddingExtensions.htm?Highlight=extension)
 
-There is also a [demo available](https://github.com/stefanwalther/qsCalendarHeatmap/raw/master/demo/Extension%20-%20Calendar%20View.qvf), if you want to see a working example.
+µThere is also a [demo available](https://github.com/stefanwalther/qsCalendarHeatmap/raw/master/demo/Extension%20-%20Calendar%20View.qvf), if you want to see a working example.
 
 ## Configuration
 
