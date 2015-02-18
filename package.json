@@ -3,9 +3,6 @@
   "version": "0.1.1",
   "description": "Qlik Sense Visualization Extension with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years.",
   "main": "-",
-  "scripts": {
-    "test": "-"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/stefanwalther/qsCalendarHeatmap.git"
@@ -25,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/stefanwalther/qsCalendarHeatmap/issues"
   },
-  "homepage": "https://github.com/stefanwalther/qsCalendarHeatmap"
+  "homepage": "https://github.com/stefanwalther/qsCalendarHeatmap",
+  "scripts": {
+    "grunt_dev": "grunt --gruntfile=grunt/Gruntfile.js dev --verbose",
+    "grunt_release": "grunt --gruntfile=grunt/Gruntfile.js release --verbose",
+    "grunt_source": "grunt --gruntfile=grunt/Gruntfile.js source --verbose"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-cli": "^0.1.13"
+  }
 }
