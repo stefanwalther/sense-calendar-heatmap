@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/stefanwalther/qsCalendarHeatmap",
   "scripts": {
-    "grunt_dev": "grunt --gruntfile=grunt/Gruntfile.js dev --verbose",
+    "test": "grunt --gruntfile=grunt/Gruntfile.js dev --verbose",
     "grunt_release": "grunt --gruntfile=grunt/Gruntfile.js release --verbose",
     "grunt_source": "grunt --gruntfile=grunt/Gruntfile.js source --verbose"
   },
