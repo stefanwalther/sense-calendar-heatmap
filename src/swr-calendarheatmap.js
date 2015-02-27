@@ -35,7 +35,7 @@ define( [
 				for ( var i = 0; i < hc.qHyperCube.qDataPages[0].qMatrix.length; i++ ) {
 					counter++;
 
-					if (hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsEmpty === false) {
+					if (hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsEmpty === false || hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsNull === false) {
 						var dateKey = hc.qHyperCube.qDataPages[0].qMatrix[i][0].qText;
 						var val = parseFloat( hc.qHyperCube.qDataPages[0].qMatrix[i][1].qNum );
 						var valToolTip = (_.isEmpty( hc.qHyperCube.qDataPages[0].qMatrix[i][1].qText ) ? 'Value: ' + val : hc.qHyperCube.qDataPages[0].qMatrix[i][1].qText);
