@@ -8,6 +8,7 @@
 define( [
 		'jquery',
 		'underscore',
+		'angular',
 		'qlik',
 		'./properties',
 		'./initialproperties',
@@ -20,7 +21,7 @@ define( [
 		'./lib/directives/swr-simpletable/swr-simpletable',
 		'./lib/directives/swr-calendarview/swr-calendarview'
 	],
-	function ( $, _, qlik, props, initProps, extensionUtils, cssContent, ngTemplate ) {
+	function ( $, _, angular, qlik, props, initProps, extensionUtils, cssContent, ngTemplate ) {
 		'use strict';
 		extensionUtils.addStyleToHeader( cssContent );
 
@@ -60,9 +61,11 @@ define( [
 
 						// destroySessionObject has been introduced in 1.1
 						if ( app.destroySessionObject ) {
-							app.destroySessionObject( $scope.hyperCube.qInfo.qId ).then( function ( reply ) {
-								console.log( 'destroySessionObject result', reply );
-							} );
+							app.destroySessionObject( $scope.hyperCube.qInfo.qId )
+								.then( function ( reply ) {
+									angular.noop();
+									console.log( 'destroySessionObject result', reply );
+								} );
 						} else {
 							extensionUtils.destroyObj( app, $scope.hyperCube.qInfo.qId );
 						}
