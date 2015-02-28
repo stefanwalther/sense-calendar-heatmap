@@ -32,10 +32,14 @@ define( [
 				var counter = -1;
 				for ( var i = 0; i < hc.qHyperCube.qDataPages[0].qMatrix.length; i++ ) {
 					counter++;
-					var dateKey = hc.qHyperCube.qDataPages[0].qMatrix[i][0].qText;
-					var val = parseFloat( hc.qHyperCube.qDataPages[0].qMatrix[i][1].qNum );
-					var valToolTip = (_.isEmpty( hc.qHyperCube.qDataPages[0].qMatrix[i][1].qText ) ? 'Value: ' + val : hc.qHyperCube.qDataPages[0].qMatrix[i][1].qText);
-					data[counter] = {Date: dateKey, Measure: val, ToolTip: valToolTip};
+					if ( !hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsEmpty && !hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsNull ) {
+						//if ( hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsEmpty === false || hc.qHyperCube.qDataPages[0].qMatrix[i][0].qIsNull === false ) {
+						var dateKey = hc.qHyperCube.qDataPages[0].qMatrix[i][0].qText;
+						var val = parseFloat( hc.qHyperCube.qDataPages[0].qMatrix[i][1].qNum );
+						var valToolTip = (_.isEmpty( hc.qHyperCube.qDataPages[0].qMatrix[i][1].qText ) ? 'Value: ' + val : hc.qHyperCube.qDataPages[0].qMatrix[i][1].qText);
+						data[counter] = {Date: dateKey, Measure: val, ToolTip: valToolTip};
+					}
+					//}
 				}
 				//console.log( data );
 			}
