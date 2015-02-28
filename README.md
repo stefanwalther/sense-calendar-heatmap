@@ -5,7 +5,7 @@ Qlik Sense Visualization Extension with a diverging color scale. The values are 
 
 ## Screenshot
 
-![](https://github.com/stefanwalther/qsCalendarHeatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sense.png)
+![](https://github.com/stefanwalther/qsCalendarHeatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sense_TwoInstances.png)
 
 ## Installation
 
