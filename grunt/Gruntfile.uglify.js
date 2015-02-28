@@ -9,11 +9,11 @@ module.exports = function ( grunt ) {
 	return {
 
 		options: {
-			mangle: ('<%= projectConfig.release.uglify.mangle%>' === 'true'),
-			beautify: ('<%= projectConfig.release.uglify.beautify%>' === 'true'),
-			preserveComments: ('<%= projectConfig.release.uglify.preserveComments%>' === 'true'),
+			mangle: true,
+			beautify: false,
+			preserveComments: false,
 			compress: {
-				drop_console: ('<%= projectConfig.release.uglify.drop_console%>' === 'true')
+				drop_console: true
 			}
 		},
 		release: {
@@ -25,6 +25,10 @@ module.exports = function ( grunt ) {
 				{
 					src: ['../dist/properties.js'],
 					dest: '../dist/properties.js'
+				},
+				{
+					src: ['../dist/initialproperties.js'],
+					dest: '../dist/initialproperties.js'
 				},
 				{
 					src: ['../dist/lib/js/calendar.js'],
