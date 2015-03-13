@@ -31,7 +31,7 @@ module.exports = function ( grunt ) {
 		'replace:dev',
 
 		// JSHint
-		'jshint',
+		//'jshint',
 
 		// Less support: true
 		'less:dev',
