@@ -260,7 +260,7 @@ define( [
 				cvData: '='
 			},
 			template: ngTemplate,
-			link: function ( $scope, $element /*, $attrs*/ ) {
+			link: function ( $scope/*, $element , $attrs*/ ) {
 
 				$scope.$watchCollection( 'cvData', function ( /*newVal, oldVal*/ ) {
 					//console.log( 'swr-calendarview:newVal', newVal );
@@ -269,10 +269,11 @@ define( [
 
 				$scope.$watch(
 					function () {
-						return [$scope.cvData,$( '#chart_' + $scope.objectId ).width(), $scope.cvData,$( '#chart_' + $scope.objectId ).height()].join( 'x' );
+						return [$( '#chart_' + $scope.objectId ).width(), $( '#chart_' + $scope.objectId ).height()].join( 'x' );
 					},
 					function ( newVal, oldVal ) {
 						if ( newVal !== oldVal ) {
+							console.log( 'new size', newVal );
 							$scope.render();
 						}
 					}
@@ -283,7 +284,7 @@ define( [
 					//console.info( 'render Chart', $scope.objectId );
 					//console.log( '-- data', $scope.cvData );
 
-					renderChart( $scope.objectId, $scope.cvData, $scope.cvData,$( '#chart_' + $scope.objectId ).width() );
+					renderChart( $scope.objectId, $scope.cvData, $( '#chart_' + $scope.objectId ).width() );
 
 				};
 

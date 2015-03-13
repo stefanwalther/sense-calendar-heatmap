@@ -1,17 +1,27 @@
 # Change Log
 
+## Version 0.1.3
+Date: 2015-03-13
+
+**Bugfix:**
+* Fix to send the correct width to renderChart and detect when it needs to redraw due to the changes in screen size. 
+	* Thanks to [qliktab](https://github.com/qliktap) (based on [PR #5](https://github.com/stefanwalther/qsCalendarHeatmap/pull/5))
+* Better and correct minification of files, ensure that all console.logs are removed
+
 ## Version 0.1.2
 Date: 2015-02-28
 
 **Enhancements:**
-* Merge pull request #4 (ab9d494) to suppress empty years
+* Supress display of empty years. 
+	* Thanks to [andre-ferreira-qlik](https://github.com/andre-ferreira-qlik) ([PR #2](https://github.com/stefanwalther/qsCalendarHeatmap/pull/2))
 * Fixed issue that the grunt:release task didn't remove console.xx() entries.
 
 
 ## Version 0.1.1
 Date: 2015-02-18
 
-* Fix: Don't display years without data
+* Bugfixes: 
+	* Don't display years without data
 
 ## Version 0.1.0
 Date: 2015-02-17
