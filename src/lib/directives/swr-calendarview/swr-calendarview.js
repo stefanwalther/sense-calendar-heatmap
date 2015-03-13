@@ -269,7 +269,7 @@ define( [
 
 				$scope.$watch(
 					function () {
-						return [$element[0].offsetWidth, $element[0].offsetHeight].join( 'x' );
+						return [$scope.cvData,$( '#chart_' + $scope.objectId ).width(), $scope.cvData,$( '#chart_' + $scope.objectId ).height()].join( 'x' );
 					},
 					function ( newVal, oldVal ) {
 						if ( newVal !== oldVal ) {
@@ -283,7 +283,7 @@ define( [
 					//console.info( 'render Chart', $scope.objectId );
 					//console.log( '-- data', $scope.cvData );
 
-					renderChart( $scope.objectId, $scope.cvData, $element[0].offsetWidth );
+					renderChart( $scope.objectId, $scope.cvData, $scope.cvData,$( '#chart_' + $scope.objectId ).width() );
 
 				};
 
