@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.4
+date: 2015-04-16
+**Bugfix:**
+* Temporary bugfix to get the property panel also working for MS11 (unofficial internal release)
+
 ## Version 0.1.3
 Date: 2015-03-13
 

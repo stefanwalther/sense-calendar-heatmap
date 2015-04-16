@@ -10,21 +10,24 @@ define( [], function () {
 		ref: "props.uniqueDay",
 		label: "Field containing the unique day",
 		type: "string",
-		expression: ""
+		expression: "",
+		show: true
 	};
 
 	var uniqueDayValue = {
 		ref: "props.uniqueDayValue",
 		label: "Value expression",
 		type: "string",
-		expression: ""
+		expression: "",
+		show: true
 	};
 
 	var uniqueDayTooltip = {
 		ref: "props.uniqueDayTooltip",
 		label: "Tooltip expression",
 		type: "string",
-		expression: ""
+		expression: "",
+		show: true
 	};
 
 	// ****************************************************************************************
@@ -45,7 +48,8 @@ define( [], function () {
 				label: "On"
 			}
 		],
-		defaultValue: false
+		defaultValue: false,
+		show: true
 	};
 
 	// ****************************************************************************************
@@ -67,10 +71,11 @@ define( [], function () {
 	};
 
 	var dataPanel = {
-		type: "items",
 		label: "Data",
+		component: "items",
 		items: {
 			MyData: {
+				component: "items",
 				items: {
 					uniqueDay: uniqueDay,
 					uniqueDayValue: uniqueDayValue,
