@@ -2,13 +2,13 @@
 
 ## Version 0.1.4
 date: 2015-04-16
-**Bugfix:**
-* Temporary bugfix to get the property panel also working for MS11 (unofficial internal release)
+**Fixes:**
+* Make the property panel "future proof" + a temporary bug fix to get the property panel also working for MS11 (unofficial internal release)
 
 ## Version 0.1.3
 Date: 2015-03-13
 
-**Bugfix:**
+**Fixes:**
 * Fix to send the correct width to renderChart and detect when it needs to redraw due to the changes in screen size. 
 	* Thanks to [qliktab](https://github.com/qliktap) (based on [PR #5](https://github.com/stefanwalther/qsCalendarHeatmap/pull/5))
 * Better and correct minification of files, ensure that all console.logs are removed
@@ -25,7 +25,7 @@ Date: 2015-02-28
 ## Version 0.1.1
 Date: 2015-02-18
 
-* Bugfixes: 
+* Fixes: 
 	* Don't display years without data
 
 ## Version 0.1.0
