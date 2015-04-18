@@ -1,21 +1,19 @@
-[![Build Status](https://travis-ci.org/stefanwalther/qsCalendarHeatmap.svg?branch=master)](https://travis-ci.org/stefanwalther/qsCalendarHeatmap)
-
 # Calendar Heatmap
 Qlik Sense Visualization Extension with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years.
 
 ## Screenshot
 
-![](https://github.com/stefanwalther/qsCalendarHeatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sense_TwoInstances.png)
+![](https://github.com/stefanwalther/sense-calendar-heatmap/raw/gh-pages/images/Calendar-Heatmap-for-Qlik-Sense_TwoInstances.png)
 
 ## Installation
 
-1. Download the [latest version](https://github.com/stefanwalther/qsCalendarHeatmap/raw/master/build/CalendarHeatmap_latest.zip)
+1. Download the [latest version](https://github.com/stefanwalther/sense-calendar-heatmap/raw/master/build/Calendar-Heatmap_latest.zip)
 2. Qlik Sense Desktop
 	* To install, copy all files in the .zip file to folder "C:\Users\%USERNAME%\Documents\Qlik\Sense\Extensions\swr-CalendarHeatmap"
 3. Qlik Sense Server
 	* See instructions [how to import an extension on Qlik Sense Server](http://help.qlik.com/sense/en-US/online/#../Subsystems/Qlik_Management_Console_help/Content/QMC_Resources_Extensions_AddingExtensions.htm?Highlight=extension)
 
-There is also a [demo available](https://github.com/stefanwalther/qsCalendarHeatmap/raw/master/demo/Extension%20-%20Calendar%20View.qvf), if you want to see a working example.
+There is also a [demo available](https://github.com/stefanwalther/sense-calendar-heatmap/raw/master/demo/Extension%20-%20Calendar%20View.qvf), if you want to see a working example.
 
 ## Configuration
 
@@ -66,9 +64,9 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
 ## Change Log
 
-See [CHANGELOG.md](https://github.com/stefanwalther/qsCalendarHeatmap/blob/master/CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/stefanwalther/sense-calendar-heatmap/blob/master/CHANGELOG.md)
 
 ## License & Copyright
 The software is made available "AS IS" without any warranty of any kind under the MIT License (MIT).
 
-See [Additional license information for this solution.](https://github.com/stefanwalther/qsCalendarHeatmap/blob/master/LICENSE.md)
+See [Additional license information for this solution.](https://github.com/stefanwalther/sense-calendar-heatmap/blob/master/LICENSE.md)
