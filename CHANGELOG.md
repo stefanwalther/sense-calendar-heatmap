@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.2.0
+date: 2015-08-11
+**Enhancements:**
+* Move to sense-go as deployment system
+* Renamed to sense-calendar-heatmap
+
 ## Version 0.1.4
 date: 2015-04-16
 **Fixes:**
