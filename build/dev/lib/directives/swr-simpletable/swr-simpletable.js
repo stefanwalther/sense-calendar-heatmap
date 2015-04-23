@@ -1,0 +1,1 @@
+define(["jquery","qvangular","text!./swr-simpletable.ng.html","text!./swr-simpletable.css"],function(e,t,i,l){"use strict";e("<style>").html(l).appendTo("head"),t.directive("swrSimpleTable",[function(){return{restrict:"EA",scope:{hyperCube:"="},template:i,link:function(){}}}])});

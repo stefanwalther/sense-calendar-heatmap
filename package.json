@@ -28,5 +28,9 @@
   "homepage": "https://github.com/stefanwalther/qsCalendarHeatmap",
   "scripts": {
     "test": "cd grunt && npm install && grunt --gruntfile=Gruntfile.js dev --verbose && grunt --gruntfile=Gruntfile.js release --verbose && grunt --gruntfile=Gruntfile.js source --verbose"
+  },
+  "devDependencies": {
+    "gulp": "git://github.com/gulpjs/gulp#4.0",
+    "sense-go": "^0.3.3"
   }
 }

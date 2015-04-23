@@ -1,0 +1,1 @@
+define(["jquery","underscore"],function(e){"use strict";return{addStyleToHeader:function(n){e("<style>").html(n).appendTo("head")},destroyObj:function(e,n){e.model.session.socket.send(JSON.stringify({jsonrpc:"2.0",id:2,method:"DestroySessionObject",handle:1,params:n instanceof Array?n:[n]}))}}});

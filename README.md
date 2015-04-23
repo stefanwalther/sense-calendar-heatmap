@@ -7,7 +7,7 @@ Qlik Sense Visualization Extension with a diverging color scale. The values are 
 
 ## Installation
 
-1. Download the [latest version](https://github.com/stefanwalther/sense-calendar-heatmap/raw/master/build/Calendar-Heatmap_latest.zip)
+1. Download the [latest version](https://github.com/stefanwalther/sense-calendar-heatmap/raw/master/build/sense-calendar-heatmap_latest.zip)
 2. Qlik Sense Desktop
 	* To install, copy all files in the .zip file to folder "C:\Users\%USERNAME%\Documents\Qlik\Sense\Extensions\swr-CalendarHeatmap"
 3. Qlik Sense Server
