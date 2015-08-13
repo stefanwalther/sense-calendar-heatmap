@@ -1,5 +1,6 @@
 calendarheatmap.png;
 initialproperties.js;
+lib/css/main.css;
 lib/css/style.css;
 lib/directives/swr-calendarview/colorbrewer.css;
 lib/directives/swr-calendarview/swr-calendarview.css;

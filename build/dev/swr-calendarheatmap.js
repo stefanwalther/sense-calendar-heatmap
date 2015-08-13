@@ -14,7 +14,7 @@ define( [
 		'./initialproperties',
 		'./lib/js/extensionUtils',
 
-		'text!./lib/css/style.css',
+		'text!./lib/css/main.css',
 		'text!./swr-calendarheatmap.ng.html',
 
 		// no return value
