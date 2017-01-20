@@ -1,0 +1,202 @@
+# -------------------------------------------------------------------------------
+# Package Name
+# -------------------------------------------------------------------------------
+packageName: null                   # defaults to "name" in package.json
+
+# -------------------------------------------------------------------------------
+# Basic Paths
+# -------------------------------------------------------------------------------
+srcDir: "./src"                     # defaults to "./src"
+tmpDir: "./.tmp"                    # defaults to "./.tmp"
+buildDir: "./build"                 # defaults to "./build"
+buildDevDir: "./build/dev"          # defaults to "./build/dev"
+buildReleaseDir: "./build/release"  # defaults to "./build/release"
+
+
+# -------------------------------------------------------------------------------
+# Runtime options
+# -------------------------------------------------------------------------------
+debugOutput: true
+
+# -------------------------------------------------------------------------------
+# Deployment
+# -------------------------------------------------------------------------------
+deployment:
+  toLocal:
+    enabled: false
+    pathFetching: true              # By default the path will be automatically fetched.
+
+    localExtensionsBaseDir:         # defaults to the local extension directory of Qlik Sense,
+                                    # if pathFetching is enabled, this path will be determined automatically
+
+    extensionDirOverride:           # Define the extensionDir if you want to deploy to another directory than defined in packageName
+  qrs:                              # Not implemented, yet
+    enabled: false
+    url: null
+  toSsh:                            # Upload via SSH
+    enabled: false
+    host: "192.168.56.11"
+    port: 22
+    username: "usr"
+    password: "foobar"
+    dest: "/c/Users/usr/Documents/Qlik/Sense/Extensions/whatever-extension"
+  viaShell:
+    enabled: false
+    cmd: "ls"
+
+# -------------------------------------------------------------------------------
+# Task specific settings
+# -------------------------------------------------------------------------------
+transpile:
+  src: "./"
+  dest: "./"
+wbfolder:
+  enabled: true
+  cwd: "./.tmp"
+  src: "./**/*.*"                   # Ideally we should use variables here, but not supported by js-yaml right now
+  dest: "./.tmp/wbfolder.wbl"       # Destination for the generated wbfolder.wbl file, by default in the output"s root directory
+npm:
+  publish: true                     # If set to false, task npm:publish will NOT do anything
+watch:
+  - "./src/**/*.*"
+
+# -------------------------------------------------------------------------------
+# Import tasks
+# -------------------------------------------------------------------------------
+import:
+  fromLocal:
+    enabled: true
+    files:
+      # - ["src/glob", "dest/glob/"]
+  fromSsh:
+    enabled: false
+    host: "192.168.56.11"
+    port: 22
+    username: "usr"
+    password: "foobar"
+    src: ""
+    dest: ""
+    files:
+      - src: ""
+        dest: ""
+
+# -------------------------------------------------------------------------------
+# Less  tasks
+# -------------------------------------------------------------------------------
+lessReduce:
+  src: "./src/lib/less/main.less"
+  dest: "./.tmp/lib/css"
+lessEach:
+  src: "./src/**/*.less"
+  dest: "./.tmp"
+replaceTmp:
+  src: "./.tmp/**/*.{qext,json,js,html,htm,xml,yml,txt}"
+  dest: "./.tmp"
+
+# -------------------------------------------------------------------------------
+# CSS minify tasks
+# -------------------------------------------------------------------------------
+cleanCssTmp:
+  src:
+    - "./.tmp/**/*.css"
+    - "!./.tmp/**/*.min.css"
+  dest: "./.tmp/"
+
+# -------------------------------------------------------------------------------
+# Custom replacement patterns
+# -------------------------------------------------------------------------------
+replacements:
+
+# -------------------------------------------------------------------------------
+# Uglify tasks
+# -------------------------------------------------------------------------------
+uglify:
+  mangle: false                      # Do not mangle, otherwise angularJS will be broken
+  beautify: true
+  compress: true
+  preserveComments: "license"
+uglifyTmp:
+  src: "./.tmp/**/*.js"
+  srcExcluded: "./.tmp/**/*.min.js"
+  dest: "./.tmp"
+
+# -------------------------------------------------------------------------------
+# Shell
+# -------------------------------------------------------------------------------
+shell:
+  enabled: false
+  tasks:
+  # - ""
+
+
+
+# -------------------------------------------------------------------------------
+# Misc options
+# -------------------------------------------------------------------------------
+htmlmin:
+  collapseWhitespace: true
+  preserveLineBreaks: true
+  removeComments: true
+
+
+# -------------------------------------------------------------------------------
+# Task chains
+# -------------------------------------------------------------------------------
+taskChains:
+  "build":
+    - "shell"
+    - "clean:tmp"
+    - "copy:toTmp"
+    - "import:fromLocal"
+    - "less:reduce"
+    - "replace:tmp"
+    - "wbfolder:tmp"
+    - "clean:tmpIllegal"              #clean illegal files
+    - "jsonlint:tmp"
+    - "htmlmin:tmp"
+    - "cleanCss:tmp"
+    - "clean:buildDev"
+    - "header-js:tmp"
+    - "copy:tmpToDev"
+    - "zip:dev"
+    - "clean:localExtensionDir"
+    - "deploy:toLocal"
+    - "deploy:toSsh"
+    - "deploy:viaShell"
+    - "clean:tmp"
+  "release":
+    - "shell"
+    - "clean:tmp"
+    - "copy:toTmp"
+    - "import:fromLocal"
+    - "less:reduce"
+    - "replace:tmp"
+    # - "wbfolder:tmp" ==> doesn"t make sense since the uglified files cannot really be edited in Dev-Hub
+    - "uglify:tmp"
+    - "clean:tmpIllegal"
+    - "jsonlint:tmp"
+    - "htmlmin:tmp"
+    - "minify:json:tmp"
+    - "cleanCss:tmp"
+    - "header-js:tmp"
+    - "clean:buildRelease"
+    - "copy:tmpToRelease"
+    - "zip:release"
+    - "zip:latest"
+    - "clean:localExtensionDir"
+    - "deploy:toLocal"
+    - "deploy:toSsh"
+    - "deploy:viaShell"
+    - "clean:tmp"
+  "publish":
+    - "git:add"
+    - "git:commit"
+    - "git:push"
+  "all":
+    - "bump:patch"
+    - "build"
+    - "release"
+    - "git:add"
+    - "git:commit"
+    - "git:push"
+    - "npm:publish"

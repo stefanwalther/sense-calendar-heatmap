@@ -1,0 +1,36 @@
+{
+  "name": "sense-calendar-heatmap",
+  "version": "0.2.5",
+  "description": "Qlik Sense Visualization Extension with a diverging color scale. The values are displayed as colored cells per day. Days are arranged into columns by week, then grouped by month and years.",
+  "main": "-",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanwalther/qsCalendarHeatmap.git"
+  },
+  "keywords": [
+    "qlik",
+    "qlik-sense",
+    "sense",
+    "qliksense-visualization-extension",
+    "heatmap",
+    "d3",
+    "visualization",
+    "extension",
+    "calendar",
+    "view",
+    "calendar"
+  ],
+  "author": "Stefan Walther",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanwalther/qsCalendarHeatmap/issues"
+  },
+  "homepage": "https://github.com/stefanwalther/qsCalendarHeatmap",
+  "scripts": {
+    "test": "cd grunt && npm install && grunt --gruntfile=Gruntfile.js dev --verbose && grunt --gruntfile=Gruntfile.js release --verbose && grunt --gruntfile=Gruntfile.js source --verbose"
+  },
+  "devDependencies": {
+    "gulp": "git://github.com/gulpjs/gulp#4.0",
+    "sense-go": "^0.3.3"
+  }
+}
