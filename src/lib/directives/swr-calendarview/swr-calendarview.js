@@ -94,8 +94,7 @@ define( [
 			
 			if ( !cvData || cvData.length === 0 ) {
 				return;
-			}
-			
+			}			
 
 			$( '#chart_' + objectId ).empty();
 
